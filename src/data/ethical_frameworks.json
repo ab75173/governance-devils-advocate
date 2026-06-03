@@ -1,0 +1,120 @@
+{
+  "version": "Curated philosophical scaffolds for AI-deployment reasoning",
+  "frameworks": {
+    "utilitarian": {
+      "framework": "utilitarian",
+      "tradition": "Consequentialism (Bentham, Mill, Singer)",
+      "core_question": "Of the available options, which produces the greatest aggregate well-being across all affected parties — accounting for probabilities, magnitudes, and time horizons?",
+      "analytical_steps": [
+        "Enumerate every affected party (direct users, third parties, future users, the operator).",
+        "For each option (deploy / deploy-with-controls / don't deploy / alternative), forecast the distribution of outcomes.",
+        "Weight each outcome by probability and magnitude of welfare change.",
+        "Sum across parties and compare options.",
+        "Identify the option with the highest expected aggregate welfare and the assumptions it depends on."
+      ],
+      "key_considerations": [
+        "Avoid privileging present users over future or downstream parties.",
+        "Distinguish expected value from worst-case value — utilitarian reasoning under risk often misses tail harms.",
+        "Watch for measurement bias: easily quantified benefits can crowd out hard-to-measure harms.",
+        "Be explicit about whose welfare you are counting and at what discount rate."
+      ],
+      "typical_failure_modes": [
+        "Justifying serious harm to a minority by aggregate gain to a majority.",
+        "Treating unmeasured harms as zero.",
+        "Reasoning past constraint-style obligations (e.g., consent) by netting them out."
+      ]
+    },
+    "deontological": {
+      "framework": "deontological",
+      "tradition": "Duty-based ethics (Kant, Korsgaard)",
+      "core_question": "Independent of consequences, what duties, rights, and constraints apply — and does each option respect persons as ends in themselves rather than mere means?",
+      "analytical_steps": [
+        "Identify duties owed to each affected party (consent, truth-telling, non-coercion, due process).",
+        "Identify the rights each party can claim against the deploying organization.",
+        "Apply the universalizability test: could this practice be coherently willed as a general policy?",
+        "Apply the humanity formula: are affected persons being treated merely as data sources or processing targets?",
+        "Identify any duty or right that would be violated and ask whether a redesign could remove that violation."
+      ],
+      "key_considerations": [
+        "Constraints are typically not weighable against aggregate utility.",
+        "Informed consent is central; opaque automated decisions are suspect by default.",
+        "Procedural fairness matters even when outcomes are 'better' in aggregate.",
+        "Duties of transparency increase with the stakes of the decision the system informs."
+      ],
+      "typical_failure_modes": [
+        "Treating absence of complaints as presence of consent.",
+        "Reducing 'transparency' to a policy document nobody reads.",
+        "Allowing the system to make decisions whose appeal path is theoretical."
+      ]
+    },
+    "virtue_ethics": {
+      "framework": "virtue_ethics",
+      "tradition": "Aristotelian virtue ethics (Aristotle, MacIntyre, Vallor)",
+      "core_question": "What would a person of good practical wisdom — and what would an organization of good character — actually do here, and what does habitually deploying systems like this make us into?",
+      "analytical_steps": [
+        "Identify the relevant virtues for the practice (honesty, justice, prudence, courage, humility, care).",
+        "Identify the vices the system or its deployment context could encourage (sloppiness, deference, evasion of responsibility).",
+        "Ask what an experienced, conscientious practitioner in this domain would recognize as the right way to act.",
+        "Consider what habits this deployment will form in the operators and downstream users.",
+        "Identify whether the system supports or substitutes for the human judgment that the role requires."
+      ],
+      "key_considerations": [
+        "Character formation is a real organizational outcome — not a side effect.",
+        "Over-reliance on automated systems can erode skills that the role needs preserved.",
+        "Virtue-ethical analysis is especially useful when consequences are uncertain.",
+        "Ask who, concretely, is responsible — not just which committee."
+      ],
+      "typical_failure_modes": [
+        "Treating 'human in the loop' as virtue when the human cannot meaningfully override.",
+        "Letting metrics displace judgment in a role that exists because judgment was needed.",
+        "Outsourcing accountability to a vendor."
+      ]
+    },
+    "care_ethics": {
+      "framework": "care_ethics",
+      "tradition": "Feminist ethics of care (Gilligan, Noddings, Held)",
+      "core_question": "Who is in a relationship of dependence on this system, who is most vulnerable, and what does responsiveness to their concrete situation require?",
+      "analytical_steps": [
+        "Map the network of relationships the system embeds in.",
+        "Identify the most vulnerable affected parties (least power, least exit, least recourse).",
+        "Ask what those parties would actually need (not what the deployer wants to provide).",
+        "Examine the existing relationships the system risks displacing.",
+        "Decide what concrete responsiveness obligations the deployer takes on."
+      ],
+      "key_considerations": [
+        "Vulnerability is asymmetric — design and process must compensate.",
+        "Care responsibilities don't disappear when a process is automated; they migrate.",
+        "Voice and exit are not interchangeable. Both matter.",
+        "Generic 'feedback channels' rarely substitute for designed responsiveness."
+      ],
+      "typical_failure_modes": [
+        "Designing for the median user and shedding edge cases.",
+        "Confusing customer support with care.",
+        "Treating the absence of escalation as evidence of acceptance."
+      ]
+    },
+    "rawlsian": {
+      "framework": "rawlsian",
+      "tradition": "Justice as fairness (Rawls)",
+      "core_question": "If you did not know which affected party you would turn out to be, would you accept this deployment — and does the worst-off party have a justified complaint?",
+      "analytical_steps": [
+        "Apply the original position: reason as if you might be any affected party, with no knowledge of which.",
+        "Identify the least-advantaged party.",
+        "Ask whether the deployment improves or worsens their position.",
+        "Distinguish inequalities that pass the difference principle (benefit the least advantaged) from those that don't.",
+        "Identify procedural-justice failures: voice, due process, ability to contest."
+      ],
+      "key_considerations": [
+        "Aggregate gains do not justify making the worst-off worse off.",
+        "Procedural justice matters independently of distribution.",
+        "The veil of ignorance is a check on bias — including organizational bias toward the easy case.",
+        "Consider what the system makes harder for already-disadvantaged parties."
+      ],
+      "typical_failure_modes": [
+        "Confusing 'rising tide' arguments with justice arguments.",
+        "Defining the affected class narrowly enough that the worst-off don't appear in it.",
+        "Treating efficient outcomes as fair outcomes."
+      ]
+    }
+  }
+}

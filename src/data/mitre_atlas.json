@@ -1,0 +1,100 @@
+{
+  "version": "MITRE ATLAS — curated LLM-relevant excerpts (as of 2026)",
+  "source": "https://atlas.mitre.org/",
+  "entries": [
+    {
+      "id": "AML.T0051",
+      "type": "technique",
+      "name": "LLM Prompt Injection",
+      "tactic": "Initial Access / ML Attack Staging",
+      "description": "An adversary crafts inputs to an LLM-integrated application that override or bypass the system prompt or its operating policy. Direct prompt injection is supplied by the user; indirect prompt injection is carried in content retrieved from external sources (web pages, documents, emails, alert payloads).",
+      "mitigations": ["AML.M0015", "AML.M0017"],
+      "keywords": ["prompt injection", "instruction override", "system prompt", "indirect injection", "rag"]
+    },
+    {
+      "id": "AML.T0054",
+      "type": "technique",
+      "name": "LLM Jailbreak",
+      "tactic": "ML Attack Staging",
+      "description": "An adversary uses adversarial prompting techniques to bypass alignment guardrails of a deployed LLM, eliciting outputs the model was trained or configured to refuse.",
+      "mitigations": ["AML.M0015"],
+      "keywords": ["jailbreak", "alignment", "guardrail", "refusal bypass"]
+    },
+    {
+      "id": "AML.T0057",
+      "type": "technique",
+      "name": "LLM Data Leakage",
+      "tactic": "Exfiltration",
+      "description": "An LLM emits sensitive information from its context window, retrieved documents, or training data — typically via prompt injection or carefully crafted queries.",
+      "mitigations": ["AML.M0007", "AML.M0017"],
+      "keywords": ["data leakage", "exfiltration", "pii", "training data extraction", "sensitive output"]
+    },
+    {
+      "id": "AML.T0053",
+      "type": "technique",
+      "name": "LLM Plugin / Tool Compromise",
+      "tactic": "Execution",
+      "description": "An attacker abuses tool-calling or plugin APIs that the LLM is wired to so it performs unintended actions (deleting data, sending messages, calling internal APIs).",
+      "mitigations": ["AML.M0017", "AML.M0020"],
+      "keywords": ["plugin", "tool use", "tool compromise", "agent abuse", "function calling"]
+    },
+    {
+      "id": "AML.T0044",
+      "type": "technique",
+      "name": "Full ML Model Access",
+      "tactic": "ML Model Access",
+      "description": "An adversary has unrestricted query-level or white-box access to the model, enabling staged adversarial example generation and membership-inference attacks.",
+      "mitigations": ["AML.M0015"],
+      "keywords": ["model access", "white-box", "membership inference", "adversarial example"]
+    },
+    {
+      "id": "AML.T0040",
+      "type": "technique",
+      "name": "ML Model Inference API Access",
+      "tactic": "ML Model Access",
+      "description": "Adversary queries a model only through an inference API. Volumes of queries can reveal decision boundaries or enable evasion crafting.",
+      "mitigations": ["AML.M0004"],
+      "keywords": ["api access", "query", "inference", "evasion"]
+    },
+    {
+      "id": "AML.M0015",
+      "type": "mitigation",
+      "name": "Adversarial Input Detection",
+      "tactic": "Defense",
+      "description": "Deploy detectors for known adversarial-input patterns (prompt-injection signatures, anomalous token distributions, suspicious encodings) at the input boundary before the model is invoked.",
+      "keywords": ["detection", "input filter", "adversarial detection", "guard"]
+    },
+    {
+      "id": "AML.M0017",
+      "type": "mitigation",
+      "name": "Model Output Filtering",
+      "tactic": "Defense",
+      "description": "Filter and constrain model outputs (regex, classifiers, content filters, schema validation) before they are returned to a user or passed to a downstream tool.",
+      "keywords": ["output filter", "content filter", "schema validation"]
+    },
+    {
+      "id": "AML.M0007",
+      "type": "mitigation",
+      "name": "Sanitize Training Data",
+      "tactic": "Defense",
+      "description": "Remove PII, credentials, and adversarial samples from training and fine-tuning data. Maintain provenance records for what was included.",
+      "keywords": ["training data", "data sanitization", "provenance"]
+    },
+    {
+      "id": "AML.M0020",
+      "type": "mitigation",
+      "name": "Constrain Tool Permissions",
+      "tactic": "Defense",
+      "description": "Apply least-privilege to agent tools. Require human approval for irreversible actions. Segment tool access by data sensitivity.",
+      "keywords": ["least privilege", "tool permissions", "human in the loop", "agent"]
+    },
+    {
+      "id": "AML.M0004",
+      "type": "mitigation",
+      "name": "Restrict Number of ML Model Queries",
+      "tactic": "Defense",
+      "description": "Rate-limit per-principal model queries to slow staged adversarial attacks and detect anomalous volume.",
+      "keywords": ["rate limit", "throttle", "query volume"]
+    }
+  ]
+}

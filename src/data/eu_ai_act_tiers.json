@@ -1,0 +1,132 @@
+{
+  "version": "EU AI Act (Regulation (EU) 2024/1689) — curated tiering rules",
+  "source": "https://artificialintelligenceact.eu/",
+  "tiers": {
+    "prohibited": {
+      "description": "Article 5 — practices banned outright in the EU.",
+      "obligations": [
+        "Do not place the system on the market or put it into service in the EU.",
+        "Discontinue any existing equivalent use immediately."
+      ],
+      "annex_reference": "Article 5",
+      "triggers": [
+        "social scoring of natural persons by public authorities",
+        "predictive policing based solely on profiling of individuals",
+        "real-time remote biometric identification in publicly accessible spaces by law enforcement (with narrow exceptions)",
+        "subliminal manipulation causing significant harm",
+        "exploitation of vulnerabilities of specific groups",
+        "untargeted scraping of facial images for facial-recognition databases",
+        "emotion recognition in workplaces and educational institutions (with narrow exceptions)"
+      ]
+    },
+    "high_risk": {
+      "description": "Annex III high-risk systems and safety components of regulated products. Subject to the full conformity regime: risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy/robustness/cybersecurity, post-market monitoring, registration.",
+      "obligations": [
+        "Establish and maintain a risk management system across the lifecycle (Art. 9).",
+        "Use training/validation/test data that meets quality criteria (Art. 10).",
+        "Maintain technical documentation and event logs (Art. 11, 12).",
+        "Provide transparent information to deployers (Art. 13).",
+        "Ensure effective human oversight (Art. 14).",
+        "Meet accuracy, robustness, and cybersecurity requirements (Art. 15).",
+        "Register the system in the EU database (Art. 49).",
+        "Conduct a fundamental-rights impact assessment if the deployer is a public authority (Art. 27)."
+      ],
+      "annex_reference": "Annex III",
+      "triggers": [
+        "biometric identification or categorization of natural persons",
+        "management or operation of critical infrastructure (energy, water, transport)",
+        "education and vocational training (admission, evaluation, proctoring)",
+        "employment, worker management, access to self-employment (recruiting, evaluating, terminating)",
+        "access to essential private and public services and benefits",
+        "law enforcement (risk assessment, evidence reliability, profiling)",
+        "migration, asylum, border control",
+        "administration of justice and democratic processes",
+        "safety component of regulated products under EU sectoral law"
+      ]
+    },
+    "limited_risk": {
+      "description": "Article 50 — transparency obligations apply.",
+      "obligations": [
+        "Inform users they are interacting with an AI system when not obvious.",
+        "Label AI-generated or manipulated content (deepfakes).",
+        "Disclose use of emotion-recognition or biometric-categorization systems to affected persons."
+      ],
+      "annex_reference": "Article 50",
+      "triggers": [
+        "chatbot or conversational interface with humans",
+        "emotion recognition (outside prohibited contexts)",
+        "biometric categorization (outside prohibited contexts)",
+        "generated or manipulated image, audio, or video (deepfake)"
+      ]
+    },
+    "minimal_risk": {
+      "description": "No specific obligations under the AI Act beyond existing law. Voluntary codes of conduct encouraged.",
+      "obligations": [
+        "No EU AI Act-specific obligations.",
+        "Existing horizontal law (GDPR, product safety, sectoral rules) still applies.",
+        "Voluntary adoption of a code of conduct is encouraged (Art. 95)."
+      ],
+      "annex_reference": "Recital 165",
+      "triggers": [
+        "spam filter",
+        "AI-enabled video game",
+        "inventory optimization",
+        "generic productivity tooling without rights-affecting decisions"
+      ]
+    }
+  },
+  "classification_rules": [
+    {
+      "tier": "prohibited",
+      "any_of": [
+        "social scoring",
+        "predictive policing",
+        "real-time biometric identification in public",
+        "subliminal manipulation",
+        "exploit vulnerabilities",
+        "scrape facial images",
+        "emotion recognition in workplace",
+        "emotion recognition in school"
+      ]
+    },
+    {
+      "tier": "high_risk",
+      "any_of": [
+        "critical infrastructure",
+        "law enforcement",
+        "security alert",
+        "intrusion detection",
+        "border control",
+        "migration",
+        "asylum",
+        "biometric identification",
+        "employment",
+        "recruiting",
+        "hiring",
+        "credit scoring",
+        "essential services",
+        "education evaluation",
+        "exam proctoring",
+        "justice administration",
+        "judicial",
+        "federal agency",
+        "federal security",
+        "national security",
+        "soc operations",
+        "incident triage"
+      ]
+    },
+    {
+      "tier": "limited_risk",
+      "any_of": [
+        "chatbot",
+        "conversational",
+        "customer service bot",
+        "deepfake",
+        "synthetic media",
+        "image generation",
+        "emotion recognition"
+      ]
+    }
+  ]
+}
