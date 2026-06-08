@@ -1,5 +1,7 @@
 # AI Governance Devil's Advocate — MCP Server
 
+**Live endpoint:** `https://governance-devils-advocate.onrender.com/mcp` (Render free tier — first request after idle may take ~50s to cold-start).
+
 A remote [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) server that exposes structured AI-governance knowledge and decision-memo formatting to any MCP client (Claude Desktop, Claude Code, Cursor, VS Code with Copilot). When connected, it lets the calling LLM reason through proposed AI deployment scenarios by chaining tool calls across philosophical ethics frameworks and real-world AI governance frameworks: **NIST AI RMF**, **MITRE ATLAS**, and the **EU AI Act**.
 
 Built for [SEAS 6413 (Cloud and Big Data Management, GW SEAS) Homework #1](#academic-context). Designed as a portfolio piece for forward-deployed engineering roles: the canonical MCP pattern an enterprise customer would adopt for internal governance tooling.
@@ -56,7 +58,7 @@ Add the server to your Claude Desktop MCP config. The remote-server form (Claude
 {
   "mcpServers": {
     "governance-devils-advocate": {
-      "url": "https://YOUR-DEPLOYMENT.onrender.com/mcp"
+      "url": "https://governance-devils-advocate.onrender.com/mcp"
     }
   }
 }
